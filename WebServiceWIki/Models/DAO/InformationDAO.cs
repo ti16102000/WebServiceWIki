@@ -19,6 +19,7 @@ namespace WebServiceWIki.Models.DAO
                 we.Information.Add(i);
                 we.SaveChanges();
                 return true;
+                //aaaaaaaa
             }
             catch (Exception)
             {
