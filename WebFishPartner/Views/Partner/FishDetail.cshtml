@@ -1,0 +1,23 @@
+﻿@model WebFishPartner.PartnerReference.ThongTin
+@{
+    Layout = "~/Views/Shared/_LayoutPartner.cshtml";
+    WebFishPartner.Models.Fish fish = null;
+    if (TempData["f"] != null)
+    {
+        fish = (WebFishPartner.Models.Fish)TempData["f"];
+    }
+}
+@if (fish != null)
+{
+    <div style="display: grid;">
+        <strong style="font-size: 20px;margin-right: 10px;">@fish.name</strong>
+        <span><em>Nhập khẩu từ: @fish.import</em></span>
+        <span>Giá: @fish.price</span>
+    </div>
+
+    <p style="margin-top: 10px;">
+        @Html.Raw(Model.NoidungTT)
+    </p>
+}
+
+

@@ -1,0 +1,67 @@
+﻿@model WebWiki.MyReference.ThongTin_NguoiDung
+@{
+                /**/
+
+                ViewBag.Title = "InfoDetail";
+                Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+@if (TempData["success"] != null)
+{
+    <div id="notify" style="width: 20%">Cập nhật thành công</div>
+}
+<div style="display: flex;">
+    <div id="detailInfo">
+        <strong style="font-size: 18px;margin-right: 10px;">@Model.ChuDeTT</strong>
+        @if (Session["user"] != null)
+        {
+            <a href="@Url.Action("EditInfo",new { idInfo=Model.MaTT})" class="btn btn-success">Chỉnh sửa</a>
+        }
+        @if (Session["service"] != null)
+        {
+            <span>(Mã Bài Viết: @Model.TokenTT)</span>
+        }
+        <p style="margin-top: 10px;">
+            @Html.Raw(Model.NoidungTT)
+        </p>
+        <span><em>Người đăng: <a href="#" style="color:black">@Model.TenNguoiDung</a> (@Model.NgayTaoTT)</em></span>
+        <div style="border-bottom: 1px solid darkslateblue;margin-top: 10px;"></div>
+        <form action="@Url.Action("CreateComment")" method="post" id="inputComment">
+            <input type="hidden" name="MaTT" value="@Model.MaTT" />
+            <label for="" style="margin-right: 10px;">Ý kiến của bạn: </label>
+            <input type="text" class="form-control" name="NoidundSua" style="width: 60%;margin-right: 10px;" required>
+            <button type="submit" class="btn btn-primary mb-2">Gửi</button>
+        </form>
+    </div>
+    <div id="commentUser">
+        @if (TempData["cmt"] != null)
+        {
+            foreach (var item in ((List<WebWiki.MyReference.SuaTT_NguoiDung>)TempData["cmt"]))
+            {
+                <div id="itemInfo">
+                    <a href="@Url.Action("ViewPerson",new { idUser=item.MaNguoiDung,name=item.TenNguoiDung})" style="color: black;font-size: 18px;">@item.TenNguoiDung</a>
+                    <span>
+                        <em>
+                            @item.NoidundSua
+                        </em> (@item.NgaySua)
+                    </span>
+                    @if (TempData["id"] != null)
+                    {
+                        if ((int)TempData["id"] == item.MaNguoiDung)
+                        {
+                            <a href="@Url.Action("DelCmt",new { idCmt=item.MaSuaTT,idIF=Model.MaTT})">Xóa</a>
+                        }
+                    }
+
+
+                </div>
+            }
+
+        }
+        else
+        {
+            <span>Không có bình luận cho bài viết này!</span>
+        }
+    </div>
+</div>
+

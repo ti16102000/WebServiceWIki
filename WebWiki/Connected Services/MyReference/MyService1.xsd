@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WebServiceWIki.Models.ViewContractModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WebServiceWIki.Models.ViewContractModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Danhmuc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaDM" type="xs:int" />
+      <xs:element minOccurs="0" name="TenDM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Danhmuc" nillable="true" type="tns:Danhmuc" />
+  <xs:complexType name="ArrayOfDanhmuc">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Danhmuc" nillable="true" type="tns:Danhmuc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDanhmuc" nillable="true" type="tns:ArrayOfDanhmuc" />
+  <xs:complexType name="ThongTin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnTT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ChuDeTT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaDM" type="xs:int" />
+      <xs:element minOccurs="0" name="MaNguoiDung" type="xs:int" />
+      <xs:element minOccurs="0" name="MaTT" type="xs:int" />
+      <xs:element minOccurs="0" name="NgayTaoTT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoidungTT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTMoi" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TenTTKhongDau" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenTT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThongTin" nillable="true" type="tns:ThongTin" />
+  <xs:complexType name="ArrayOfThongTin_NguoiDung">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ThongTin_NguoiDung" nillable="true" type="tns:ThongTin_NguoiDung" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThongTin_NguoiDung" nillable="true" type="tns:ArrayOfThongTin_NguoiDung" />
+  <xs:complexType name="ThongTin_NguoiDung">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnTT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ChuDeTT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KichHoat" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaDM" type="xs:int" />
+      <xs:element minOccurs="0" name="MaNguoiDung" type="xs:int" />
+      <xs:element minOccurs="0" name="MaTT" type="xs:int" />
+      <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NgayTaoTT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoidungTT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTMoi" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TenDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenNguoiDung" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenTT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThongTin_NguoiDung" nillable="true" type="tns:ThongTin_NguoiDung" />
+  <xs:complexType name="ArrayOfThongTin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ThongTin" nillable="true" type="tns:ThongTin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThongTin" nillable="true" type="tns:ArrayOfThongTin" />
+  <xs:complexType name="SuaTT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaNguoiDung" type="xs:int" />
+      <xs:element minOccurs="0" name="MaSuaTT" type="xs:int" />
+      <xs:element minOccurs="0" name="MaTT" type="xs:int" />
+      <xs:element minOccurs="0" name="NgaySua" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoidundSua" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SuaTTMoi" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SuaTT" nillable="true" type="tns:SuaTT" />
+  <xs:complexType name="ArrayOfSuaTT_NguoiDung">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SuaTT_NguoiDung" nillable="true" type="tns:SuaTT_NguoiDung" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSuaTT_NguoiDung" nillable="true" type="tns:ArrayOfSuaTT_NguoiDung" />
+  <xs:complexType name="SuaTT_NguoiDung">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KichHoat" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaNguoiDung" type="xs:int" />
+      <xs:element minOccurs="0" name="MaSuaTT" type="xs:int" />
+      <xs:element minOccurs="0" name="MaTT" type="xs:int" />
+      <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NgaySua" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoidundSua" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SuaTTMoi" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TenNguoiDung" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SuaTT_NguoiDung" nillable="true" type="tns:SuaTT_NguoiDung" />
+  <xs:complexType name="ArrayOfNguoiDung">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NguoiDung" nillable="true" type="tns:NguoiDung" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNguoiDung" nillable="true" type="tns:ArrayOfNguoiDung" />
+  <xs:complexType name="NguoiDung">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KichHoat" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaNguoiDung" type="xs:int" />
+      <xs:element minOccurs="0" name="MaQuyen" type="xs:int" />
+      <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Matkhau" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenNguoiDung" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NguoiDung" nillable="true" type="tns:NguoiDung" />
+  <xs:complexType name="NguoiDichVu">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KichHoatNguoiDV" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MKNguoiDV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaNguoiDV" type="xs:int" />
+      <xs:element minOccurs="0" name="MailNguoiDV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenNguoiDV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenNguoiDV" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NguoiDichVu" nillable="true" type="tns:NguoiDichVu" />
+  <xs:complexType name="ArrayOfNguoiDichVu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NguoiDichVu" nillable="true" type="tns:NguoiDichVu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNguoiDichVu" nillable="true" type="tns:ArrayOfNguoiDichVu" />
+</xs:schema>

@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="WikiReference" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="WikiReference" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="WikiReference/Imports">
+      <xsd:import schemaLocation="http://localhost:57989/MyService.svc?xsd=xsd0" namespace="WikiReference" />
+      <xsd:import schemaLocation="http://localhost:57989/MyService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:57989/MyService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebServiceWIki.Models.ViewContractModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MyWikiService_TaoDM_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaoDM" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TaoDM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaoDMResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DSDM_InputMessage">
+    <wsdl:part name="parameters" element="tns:DSDM" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DSDM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DSDMResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayDM_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayDM" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayDM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayDMResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_SuaDM_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaDM" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_SuaDM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaDMResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_XoaDM_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaDM" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_XoaDM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaDMResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayCBBCate_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayCBBCate" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayCBBCate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayCBBCateResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TaoTT_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaoTT" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TaoTT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaoTTResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DSTTAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:DSTTAdmin" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DSTTAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DSTTAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTTheoNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTTheoNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTTheoNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTTheoNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTMoiNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTMoiNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTMoiNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTMoiNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTAnNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTAnNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTAnNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTAnNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTAnAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTAnAdmin" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTAnAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTAnAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTAnTheoNguoidung_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTAnTheoNguoidung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTAnTheoNguoidung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTAnTheoNguoidungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTTheoDM_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTTheoDM" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTTheoDM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTTheoDMResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayHetTTTheoNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayHetTTTheoNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayHetTTTheoNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayHetTTTheoNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTNgauNhien_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTNgauNhien" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTTNgauNhien_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTNgauNhienResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_Lay3TT_InputMessage">
+    <wsdl:part name="parameters" element="tns:Lay3TT" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_Lay3TT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Lay3TTResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTT_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTT" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTTResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_SuaTT_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaTT" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_SuaTT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaTTResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_XoaTT_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaTT" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_XoaTT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaTTResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DocTTMoi_InputMessage">
+    <wsdl:part name="parameters" element="tns:DocTTMoi" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DocTTMoi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DocTTMoiResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_AnMotTT_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnMotTT" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_AnMotTT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnMotTTResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TimKiemTT_InputMessage">
+    <wsdl:part name="parameters" element="tns:TimKiemTT" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TimKiemTT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimKiemTTResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TTTimKiem_InputMessage">
+    <wsdl:part name="parameters" element="tns:TTTimKiem" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TTTimKiem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TTTimKiemResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TaoSuaTT_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaoSuaTT" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TaoSuaTT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaoSuaTTResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DSSTT_InputMessage">
+    <wsdl:part name="parameters" element="tns:DSSTT" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DSSTT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DSSTTResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DocSuaTTMoi_InputMessage">
+    <wsdl:part name="parameters" element="tns:DocSuaTTMoi" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DocSuaTTMoi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DocSuaTTMoiResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_XoaSuaTT_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaSuaTT" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_XoaSuaTT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaSuaTTResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayBLNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayBLNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayBLNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayBLNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_XoaSuaTTTheoMaSua_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaSuaTTTheoMaSua" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_XoaSuaTTTheoMaSua_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaSuaTTTheoMaSuaResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayBLMoiTheoNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayBLMoiTheoNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayBLMoiTheoNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayBLMoiTheoNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayBLDaXemTheoNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayBLDaXemTheoNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayBLDaXemTheoNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayBLDaXemTheoNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTatCaNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_LayTatCaNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_KichHoatNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:KichHoatNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_KichHoatNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KichHoatNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_KiemTraNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:KiemTraNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_KiemTraNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KiemTraNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TaoNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaoNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TaoNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaoNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_NguoiDungDangNhap_InputMessage">
+    <wsdl:part name="parameters" element="tns:NguoiDungDangNhap" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_NguoiDungDangNhap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NguoiDungDangNhapResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_CapNhatThongTin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatThongTin" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_CapNhatThongTin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatThongTinResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DoiMatKhauNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoiMatKhauNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DoiMatKhauNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoiMatKhauNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TaoNguoiDV_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaoNguoiDV" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_TaoNguoiDV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaoNguoiDVResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_NguoiDVDangNhap_InputMessage">
+    <wsdl:part name="parameters" element="tns:NguoiDVDangNhap" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_NguoiDVDangNhap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NguoiDVDangNhapResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DSAS_InputMessage">
+    <wsdl:part name="parameters" element="tns:DSAS" />
+  </wsdl:message>
+  <wsdl:message name="MyWikiService_DSAS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DSASResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MyWikiService">
+    <wsdl:operation name="TaoDM">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/TaoDM" message="tns:MyWikiService_TaoDM_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/TaoDMResponse" message="tns:MyWikiService_TaoDM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DSDM">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/DSDM" message="tns:MyWikiService_DSDM_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/DSDMResponse" message="tns:MyWikiService_DSDM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDM">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayDM" message="tns:MyWikiService_LayDM_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayDMResponse" message="tns:MyWikiService_LayDM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaDM">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/SuaDM" message="tns:MyWikiService_SuaDM_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/SuaDMResponse" message="tns:MyWikiService_SuaDM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaDM">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/XoaDM" message="tns:MyWikiService_XoaDM_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/XoaDMResponse" message="tns:MyWikiService_XoaDM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayCBBCate">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayCBBCate" message="tns:MyWikiService_LayCBBCate_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayCBBCateResponse" message="tns:MyWikiService_LayCBBCate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaoTT">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/TaoTT" message="tns:MyWikiService_TaoTT_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/TaoTTResponse" message="tns:MyWikiService_TaoTT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DSTTAdmin">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/DSTTAdmin" message="tns:MyWikiService_DSTTAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/DSTTAdminResponse" message="tns:MyWikiService_DSTTAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayTTNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayTTNguoiDung" message="tns:MyWikiService_LayTTNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayTTNguoiDungResponse" message="tns:MyWikiService_LayTTNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayTTTheoNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayTTTheoNguoiDung" message="tns:MyWikiService_LayTTTheoNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayTTTheoNguoiDungResponse" message="tns:MyWikiService_LayTTTheoNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayTTMoiNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayTTMoiNguoiDung" message="tns:MyWikiService_LayTTMoiNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayTTMoiNguoiDungResponse" message="tns:MyWikiService_LayTTMoiNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayTTAnNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayTTAnNguoiDung" message="tns:MyWikiService_LayTTAnNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayTTAnNguoiDungResponse" message="tns:MyWikiService_LayTTAnNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayTTAnAdmin">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayTTAnAdmin" message="tns:MyWikiService_LayTTAnAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayTTAnAdminResponse" message="tns:MyWikiService_LayTTAnAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayTTAnTheoNguoidung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayTTAnTheoNguoidung" message="tns:MyWikiService_LayTTAnTheoNguoidung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayTTAnTheoNguoidungResponse" message="tns:MyWikiService_LayTTAnTheoNguoidung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayTTTheoDM">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayTTTheoDM" message="tns:MyWikiService_LayTTTheoDM_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayTTTheoDMResponse" message="tns:MyWikiService_LayTTTheoDM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayHetTTTheoNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayHetTTTheoNguoiDung" message="tns:MyWikiService_LayHetTTTheoNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayHetTTTheoNguoiDungResponse" message="tns:MyWikiService_LayHetTTTheoNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayTTNgauNhien">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayTTNgauNhien" message="tns:MyWikiService_LayTTNgauNhien_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayTTNgauNhienResponse" message="tns:MyWikiService_LayTTNgauNhien_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Lay3TT">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/Lay3TT" message="tns:MyWikiService_Lay3TT_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/Lay3TTResponse" message="tns:MyWikiService_Lay3TT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayTT">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayTT" message="tns:MyWikiService_LayTT_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayTTResponse" message="tns:MyWikiService_LayTT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaTT">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/SuaTT" message="tns:MyWikiService_SuaTT_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/SuaTTResponse" message="tns:MyWikiService_SuaTT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaTT">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/XoaTT" message="tns:MyWikiService_XoaTT_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/XoaTTResponse" message="tns:MyWikiService_XoaTT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DocTTMoi">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/DocTTMoi" message="tns:MyWikiService_DocTTMoi_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/DocTTMoiResponse" message="tns:MyWikiService_DocTTMoi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnMotTT">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/AnMotTT" message="tns:MyWikiService_AnMotTT_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/AnMotTTResponse" message="tns:MyWikiService_AnMotTT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TimKiemTT">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/TimKiemTT" message="tns:MyWikiService_TimKiemTT_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/TimKiemTTResponse" message="tns:MyWikiService_TimKiemTT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TTTimKiem">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/TTTimKiem" message="tns:MyWikiService_TTTimKiem_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/TTTimKiemResponse" message="tns:MyWikiService_TTTimKiem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaoSuaTT">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/TaoSuaTT" message="tns:MyWikiService_TaoSuaTT_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/TaoSuaTTResponse" message="tns:MyWikiService_TaoSuaTT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DSSTT">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/DSSTT" message="tns:MyWikiService_DSSTT_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/DSSTTResponse" message="tns:MyWikiService_DSSTT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DocSuaTTMoi">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/DocSuaTTMoi" message="tns:MyWikiService_DocSuaTTMoi_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/DocSuaTTMoiResponse" message="tns:MyWikiService_DocSuaTTMoi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaSuaTT">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/XoaSuaTT" message="tns:MyWikiService_XoaSuaTT_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/XoaSuaTTResponse" message="tns:MyWikiService_XoaSuaTT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayBLNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayBLNguoiDung" message="tns:MyWikiService_LayBLNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayBLNguoiDungResponse" message="tns:MyWikiService_LayBLNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaSuaTTTheoMaSua">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/XoaSuaTTTheoMaSua" message="tns:MyWikiService_XoaSuaTTTheoMaSua_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/XoaSuaTTTheoMaSuaResponse" message="tns:MyWikiService_XoaSuaTTTheoMaSua_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayBLMoiTheoNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayBLMoiTheoNguoiDung" message="tns:MyWikiService_LayBLMoiTheoNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayBLMoiTheoNguoiDungResponse" message="tns:MyWikiService_LayBLMoiTheoNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayBLDaXemTheoNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayBLDaXemTheoNguoiDung" message="tns:MyWikiService_LayBLDaXemTheoNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayBLDaXemTheoNguoiDungResponse" message="tns:MyWikiService_LayBLDaXemTheoNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayTatCaNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/LayTatCaNguoiDung" message="tns:MyWikiService_LayTatCaNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/LayTatCaNguoiDungResponse" message="tns:MyWikiService_LayTatCaNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KichHoatNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/KichHoatNguoiDung" message="tns:MyWikiService_KichHoatNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/KichHoatNguoiDungResponse" message="tns:MyWikiService_KichHoatNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KiemTraNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/KiemTraNguoiDung" message="tns:MyWikiService_KiemTraNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/KiemTraNguoiDungResponse" message="tns:MyWikiService_KiemTraNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaoNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/TaoNguoiDung" message="tns:MyWikiService_TaoNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/TaoNguoiDungResponse" message="tns:MyWikiService_TaoNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NguoiDungDangNhap">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/NguoiDungDangNhap" message="tns:MyWikiService_NguoiDungDangNhap_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/NguoiDungDangNhapResponse" message="tns:MyWikiService_NguoiDungDangNhap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatThongTin">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/CapNhatThongTin" message="tns:MyWikiService_CapNhatThongTin_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/CapNhatThongTinResponse" message="tns:MyWikiService_CapNhatThongTin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoiMatKhauNguoiDung">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/DoiMatKhauNguoiDung" message="tns:MyWikiService_DoiMatKhauNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/DoiMatKhauNguoiDungResponse" message="tns:MyWikiService_DoiMatKhauNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaoNguoiDV">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/TaoNguoiDV" message="tns:MyWikiService_TaoNguoiDV_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/TaoNguoiDVResponse" message="tns:MyWikiService_TaoNguoiDV_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NguoiDVDangNhap">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/NguoiDVDangNhap" message="tns:MyWikiService_NguoiDVDangNhap_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/NguoiDVDangNhapResponse" message="tns:MyWikiService_NguoiDVDangNhap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DSAS">
+      <wsdl:input wsaw:Action="WikiReference/MyWikiService/DSAS" message="tns:MyWikiService_DSAS_InputMessage" />
+      <wsdl:output wsaw:Action="WikiReference/MyWikiService/DSASResponse" message="tns:MyWikiService_DSAS_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

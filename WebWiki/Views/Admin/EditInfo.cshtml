@@ -1,0 +1,49 @@
+﻿@model WebWiki.MyReference.ThongTin_NguoiDung
+@{
+    ViewBag.Title = "EditInfo";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<a href="@Url.Action("ListInfoAdmin")" class="btn btn-sm btn-info" style="background-color:#4e73df;font-size:20px;float:right;">
+    <i class="fa fa-arrow-right"></i>
+</a>
+
+<section class="panel" style="margin-top:55px;">
+    <header class="panel-heading">
+        Edit Information
+    </header>
+    <form action="@Url.Action("UpdateInfo")" method="POST">
+        <div class="panel-body">
+            <div class="position-center">
+                <input type="hidden" name="MaTT" value="@Model.MaTT" />
+                <div class="form-group">
+                    <label for="">Title Name:</label>
+                    <input type="text" class="form-control" name="ChuDeTT" maxlength="200" required value="@Model.ChuDeTT">
+                </div>
+                <div class="form-group">
+                    <label for="nameSC">Category:</label>
+                    <select name="MaDM" class="form-control input-sm m-bot15" style="width: 50%">
+                        <option value="@Model.MaDM">@Model.TenDM</option>
+                        @foreach (var item in ((IEnumerable<WebWiki.MyReference.Danhmuc>)TempData["cbb"]))
+                        {
+                            <option value="@item.MaDM">@item.TenDM</option>
+                        }
+                    </select>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <label>Content:</label>
+                    <textarea name="NoidungTT" id="NoidungTT">@Model.NoidungTT</textarea>
+
+                </div>
+
+                <input type="submit" name="submit" class="btn btn-info" value="Submit">
+
+            </div>
+        </div>
+    </form>
+</section>
+@section scripts{
+    <script>CKEDITOR.replace("NoidungTT")</script>
+}
+
+

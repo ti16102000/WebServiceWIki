@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<div id="gridContent">
+    <div id="leftContent">
+        <strong>&#8226; Các bài viết ngẫu nhiên</strong>
+        @foreach (var item in ((List<WebWiki.MyReference.ThongTin_NguoiDung>)TempData["random"]))
+        {
+            <div id="itemInfo">
+                <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})" style="color: black;font-size: 18px;">@item.ChuDeTT</a>
+                <span><em>Người đăng: <a href="@Url.Action("ViewPerson",new { idUser=item.MaNguoiDung,name=item.TenNguoiDung})" style="color:black">@item.TenNguoiDung</a>  (@item.NgayTaoTT)</em></span>
+                <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})">Xem chi tiết</a>
+            </div>
+        }
+    </div>
+    <div id="rightContent">
+        <div id="topContent">
+            <a href="@Url.Action("ListInfoByIDCate",new { idCate=10})" style="color: black;"><strong>&#x27A4; Thực Vật Trên Bờ</strong></a>
+            @foreach (var item in ((List<WebWiki.MyReference.ThongTin_NguoiDung>)TempData["cate1"]))
+            {
+                <div id="itemInfo">
+                    <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})" style="color: black;font-size: 18px;">@item.ChuDeTT</a>
+                    <span><em>Người đăng: <a href="@Url.Action("ViewPerson",new { idUser=item.MaNguoiDung,name=item.TenNguoiDung})" style="color:black">@item.TenNguoiDung</a>  (@item.NgayTaoTT)</em></span>
+                    <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})">Xem chi tiết</a>
+                </div>
+            }
+        </div>
+        <div id="bottomContent">
+            <a href="@Url.Action("ListInfoByIDCate",new { idCate=7})" style="color: black;"><strong>&#x27A4; Động Vật Mặt Đất</strong></a>
+            @foreach (var item in ((List<WebWiki.MyReference.ThongTin_NguoiDung>)TempData["cate2"]))
+            {
+                <div id="itemInfo">
+                    <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})" style="color: black;font-size: 18px;">@item.ChuDeTT</a>
+                    <span><em>Người đăng: <a href="@Url.Action("ViewPerson",new { idUser=item.MaNguoiDung,name=item.TenNguoiDung})" style="color:black">@item.TenNguoiDung</a>  (@item.NgayTaoTT)</em></span>
+                    <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})">Xem chi tiết</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,13 @@
+﻿@model WebWiki.MyReference.NguoiDichVu
+@{
+    ViewBag.Title = "InfoService";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<div id="infoUser">
+    <p><strong>Tên:</strong> @Model.TenNguoiDV</p>
+    <p><strong>Email:</strong> @Model.MailNguoiDV</p>
+    <p><strong>Token:</strong> @Model.TokenNguoiDV</p>
+    <p><strong>Url API Web Wiki:</strong> http://localhost:57989/ServicePartner.svc </p>
+</div>
+

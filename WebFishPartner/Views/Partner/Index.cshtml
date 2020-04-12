@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPartner.cshtml";
+}
+
+<div style="text-align: center;">&#x1F9E1; Tiệm mới khai trương chưa nhập nhiều cá quý khách thông cảm cho sự thiếu sót này &#x1F499;</div>
+@if (Session["f"] != null)
+{
+    foreach (var item in ((List<WebFishPartner.Models.Fish>)Session["f"]))
+    {
+        <div class="itemInfo">
+            <a href="@Url.Action("FishDetail",new { id=item.id})" style="color: brown;font-size: 18px;">@item.name </a>
+            <span><em>Nhập khẩu từ: @item.import</em></span>
+            <span>Giá: @item.price</span>
+        </div>
+    }
+
+}
+

@@ -1,0 +1,21 @@
+﻿@model WebWiki.MyReference.Danhmuc
+@{
+    ViewBag.Title = "ListInfoByIDCate";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<div id="fieldTopic">
+    <strong style="margin-left: 10px;">@Model.TenDM</strong>
+</div>
+<div id="itemInfo">
+    @foreach (var item in ((List<WebWiki.MyReference.ThongTin_NguoiDung>)TempData["listInfo"]))
+    {
+        <div id="itemInfo">
+            <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})" style="color: black;font-size: 18px;">@item.ChuDeTT</a>
+            <span><em>Người đăng: <a href="@Url.Action("ViewPerson",new { idUser=item.MaNguoiDung,name=item.TenNguoiDung})" style="color:black">@item.TenNguoiDung</a>  (@item.NgayTaoTT)</em></span>
+            <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})">Xem chi tiết</a>
+        </div>
+    }
+</div>
+
+

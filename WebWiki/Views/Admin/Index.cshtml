@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<form action="" method="POST">
+    <div class="table-agile-info">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                New Information
+            </div>
+
+            <div class="table-responsive">
+
+                <table class="table table-striped b-t b-light">
+                    <thead>
+                        <tr>
+                            <th>Title Name</th>
+                            <th>Category Name</th>
+                            <th>Day Create</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody style="word-break: break-all;">
+                        @foreach (var item in ((IEnumerable<WebWiki.MyReference.ThongTin_NguoiDung>)TempData["new"]))
+                        {
+                            <tr>
+                                <td>@item.ChuDeTT</td>
+                                <td>@item.TenDM</td>
+                                <td>@item.NgayTaoTT</td>
+                                <td>
+                                    <a href="@Url.Action("DetailInfo",new { idIF = item.MaTT })" class="active" ui-toggle-class="">
+                                        <i class="fa fa-info-circle text-success text-active"></i>&nbsp; &nbsp;
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>
+

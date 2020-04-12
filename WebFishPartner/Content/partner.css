@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#master{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 15% 1fr 50px;
+}
+header{
+    background-color: blanchedalmond;
+}
+footer{
+    background-color: blanchedalmond;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+
+#title{
+    text-transform: uppercase;
+    font-size: 28px;
+    text-align: center;
+    color: mediumblue;
+    margin-top: 15px;
+}
+#hihi{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+}
+#content{
+    width: 70%;
+    margin-left: 15%;
+    padding: 20px;
+}
+.itemInfo{
+    display: grid;
+    margin-left: 15px;
+    margin-top: 10px;
+    border-bottom: 1px solid lightblue;
+}
+#itemInfo:last-child{
+    border-bottom: none;
+}

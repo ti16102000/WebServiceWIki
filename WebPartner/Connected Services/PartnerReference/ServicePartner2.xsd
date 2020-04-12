@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WebServiceWIki.Models.ViewContractModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WebServiceWIki.Models.ViewContractModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ThongTin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnTT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ChuDeTT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaDM" type="xs:int" />
+      <xs:element minOccurs="0" name="MaNguoiDung" type="xs:int" />
+      <xs:element minOccurs="0" name="MaTT" type="xs:int" />
+      <xs:element minOccurs="0" name="NgayTaoTT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoidungTT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTMoi" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TokenTT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThongTin" nillable="true" type="tns:ThongTin" />
+</xs:schema>

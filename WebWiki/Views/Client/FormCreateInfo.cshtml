@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "FormCreateInfo";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<form action="@Url.Action("CreateInfoByUser")" method="POST" id="formInfo">
+    <div class="panel-body">
+        <div class="position-center">
+            @if (TempData["success"] != null)
+            {
+                <div id="notify">Bài viết đăng thành công</div>
+            }
+            <div class="form-group">
+                <label for="">Tiêu đề:</label>
+                <input type="text" class="form-control" name="ChuDeTT" maxlength="200" required value="@(TempData["title"]??null)">
+            </div>
+            <div class="form-group">
+                <label for="nameSC">Danh mục:</label>
+                <select name="MaDM" class="form-control input-sm m-bot15" style="width: 50%">
+                    @foreach (var item in ((IEnumerable<WebWiki.MyReference.Danhmuc>)TempData["cate"]))
+                    {
+                        <option value="@item.MaDM">@item.TenDM</option>
+                    }
+                </select>
+            </div>
+            <div style="margin-bottom:10px;">
+                <label>Nội dung:</label>
+                <textarea name="NoidungTT" id="NoidungTT">@(TempData["content"]??null)</textarea>
+            </div>
+            @if (TempData["error"] != null)
+            {
+                <div id="notify">Dữ liệu thông tin quá nhiều!</div>
+            }
+            <input type="submit" name="submit" class="btn btn-info" value="Đăng bài viết">
+        </div>
+    </div>
+</form>
+@section scripts{
+    <script>CKEDITOR.replace("NoidungTT")</script>
+}

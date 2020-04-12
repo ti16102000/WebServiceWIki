@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "ViewPerson";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<strong>Các bài viết được đăng bởi @ViewBag.name</strong>
+@if (TempData["info"] != null)
+{
+    foreach (var item in ((List<WebWiki.MyReference.ThongTin>)TempData["info"]))
+    {
+        <div id="itemInfo">
+            <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})" style="color: black;font-size: 18px;">@item.ChuDeTT</a>
+            <span><em>Ngày đăng: @item.NgayTaoTT</em></span>
+            <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})">Xem chi tiết</a>
+        </div>
+    }
+}
+
+
+

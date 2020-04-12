@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<form action="@Url.Action("CreateUser")" method="POST" style="width: 50%;margin: auto;">
+    <div class="panel-body">
+        <div class="position-center">
+            <div class="form-group">
+                <label for="">Tên của bạn:</label>
+                <input type="text" class="form-control" name="TenNguoiDung" required value="@(TempData["name"]??null)">
+            </div>
+            <div class="form-group">
+                <label for="">Mật khẩu:</label>
+                <input type="password" class="form-control" name="Matkhau" id="pwdUser" pattern=".{6,}" required title="Six or more characters">
+            </div>
+            <div class="form-group">
+                <label for="">Xác nhận mật khẩu:</label>
+                <input type="password" class="form-control" name="" id="rePwdUser" required>
+                <div id="ErrorPwd" style="color: red;display: none;">Bạn nhập không khớp mật khẩu!</div>
+            </div>
+            <div class="form-group">
+                <label for="">Email:</label>
+                <input type="text" class="form-control" name="Mail" pattern="[a-z0-9._%+-]+@("@")[a-z0-9.-]+\.[a-z]{2,}$" title="Invalid email" required value="@(TempData["mail"]??null)">
+            </div>
+            @if (TempData["error"] != null)
+            {
+                <div id="notify" style="width: 30%">Mail đã tồn tại</div>
+            }
+            <input type="submit" name="submit" id="btnSignUp" class="btn btn-info" value="Đăng kí">
+            <p style="margin-top: 20px;"><a href="@Url.Action("RegisterService")">Đăng kí xài dịch vụ</a></p>
+        </div>
+    </div>
+</form>
+

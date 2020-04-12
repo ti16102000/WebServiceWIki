@@ -1,0 +1,241 @@
+body {
+    margin: 0;
+}
+
+#master {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: "menu head" "menu content" "menu foot";
+    grid-template-columns: 13% 1fr;
+    grid-template-rows: 60px 1fr 50px;
+}
+
+a {
+    text-decoration: none;
+}
+/*HEADER*/
+header {
+    background-color: aliceblue;
+    grid-area: head;
+    padding: 20px;
+    display: flex;
+    /* border-bottom: 1px solid gray; */
+}
+
+#inputSearch {
+    width: 120%;
+}
+
+    #inputSearch input, #formUser {
+        width: 40%;
+    }
+
+#fieldSearch {
+    background-color: white;
+    min-height: fit-content;
+    position: absolute;
+    z-index: 1000;
+    min-width: 20%;
+    border: 1px solid steelblue;
+    padding: 10px;
+    top: 8%;
+}
+
+#signIn:hover, #signUp a:hover {
+    color: red;
+}
+
+#signUp a {
+    color: black;
+}
+
+#formUser {
+    display: flex;
+}
+
+#gridSearch {
+    display: grid;
+}
+
+    #gridSearch a {
+        color: black;
+        border-bottom: 1px solid steelblue;
+    }
+
+        #gridSearch a:last-child {
+            border-bottom: none;
+        }
+/*MENU*/
+#leftMenu {
+    background-color: aliceblue;
+    grid-area: menu;
+    padding: 5px;
+    border-right: 1px solid gray;
+}
+
+#menu {
+    padding: 15px;
+    min-height: 400px;
+}
+
+    #menu li, #fieldSearch li {
+        list-style: none;
+        margin-bottom: 5px;
+    }
+
+    #menu ul, #fieldSearch ul {
+        margin: 0;
+        padding: 0;
+    }
+/*CONTENT*/
+#contentMain {
+    grid-area: content;
+    padding: 10px;
+}
+
+#gridContent {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    min-height: fit-content;
+}
+
+#leftContent {
+    padding: 10px;
+    border-right: 1px solid lightslategray;
+}
+
+#itemInfo {
+    display: grid;
+    margin-left: 15px;
+    margin-top: 10px;
+    border-bottom: 1px solid lightblue;
+}
+
+    #itemInfo:last-child {
+        border-bottom: none;
+    }
+
+#rightContent {
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    margin-left: 10px;
+}
+
+#topContent {
+    border-bottom: 1px solid lightslategray;
+}
+
+#fieldTopic {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    background-color: lightblue;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#detailInfo {
+    width: 60%;
+    padding: 20px;
+}
+
+#commentUser {
+    width: 40%;
+}
+
+#detailInfo strong {
+    border-bottom: 1px solid steelblue;
+}
+
+#commentUser {
+    width: 40%;
+    min-height: fit-content;
+    border: 1px solid steelblue;
+}
+
+#inputComment {
+    margin-top: 20px;
+    display: flex;
+}
+
+#formInfo {
+    width: 50%;
+    margin: auto;
+}
+
+#menuUser {
+    height: 40px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+    #menuUser div {
+        border: 1px solid steelblue;
+    }
+
+        #menuUser div:last-child {
+            border-right: none;
+        }
+
+#workUser {
+    min-height: 200px;
+    background-color: whitesmoke;
+    padding: 20px;
+}
+
+#infoUser {
+    min-height: 200px;
+}
+
+    #infoUser > p {
+        margin-left: 30%;
+    }
+
+#infoes, #notifies {
+    min-height: 400px;
+}
+
+#gridInfoes, #gridNotifies {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+#infoDisplay {
+    border-right: 1px solid steelblue;
+}
+
+.magrinRegister {
+    width: 50%;
+    margin: auto;
+}
+
+#notify {
+    width: 40%;
+    background-color: aquamarine;
+    height: 40px;
+    line-height: 30px;
+    color: red;
+    border: 5px solid cadetblue;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#countNotice {
+    color: red;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 10px;
+}
+/*FOOTER*/
+footer {
+    background-color: aliceblue;
+    grid-area: foot;
+    line-height: 50px;
+    text-align: center;
+}

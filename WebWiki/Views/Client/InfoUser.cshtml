@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "InfoUser";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<div id="menuUser">
+    <div id="menuInfo">Thông tin cá nhân</div>
+    <div id="menuPwd">Đổi mật khẩu</div>
+    <div id="menuInfoes">Các bài viết của bạn</div>
+    <div id="menuNotify">Thông báo <span id="countNotice">@(Session["new"] ?? null)</span></div>
+</div>
+<div id="workUser">
+    <div id="infoUser">
+        <p>Tên: @Session["name"]</p>
+        <p>Email: @Session["mail"]</p>
+        @*<a href="" class="btn btn-info">Chỉnh sửa thông tin</a>*@
+    </div>
+    <div id="changePwd">
+        <form action="@Url.Action("ChangePwd")" method="POST" style="width: 30%;margin: auto;">
+            <div class="panel-body">
+                <div class="position-center">
+                    <div class="form-group">
+                        <label for="">Mật khẩu cũ:</label>
+                        <input type="password" class="form-control" name="pwdOld" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Mật khẩu mới:</label>
+                        <input type="password" class="form-control" name="pwdNew" id="pwdUser" required pattern=".{6,}" title="Six or more characters">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Xác nhận mật khẩu mới:</label>
+                        <input type="password" class="form-control" name="" id="rePwdUser" required>
+                        <div id="ErrorPwd" style="color: red;display: none;">
+                            Bạn nhập không khớp mật khẩu!
+                        </div>
+                    </div>
+                    <input type="submit" name="submit" class="btn btn-info" value="Cập nhật mật khẩu">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="infoes">
+        <div id="gridInfoes">
+            <div id="infoDisplay">
+                <strong style="margin-left: 10px;">Các bài viết đang được hiển thị</strong>
+                @if (Session["info"] == null)
+                {
+                    <em>Bạn chưa có bài viết nào!</em>
+                }
+                else
+                {
+                    foreach (var item in ((List<WebWiki.MyReference.ThongTin>)Session["info"]))
+                    {
+                        <div id="itemInfo">
+                            <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})" style="color: black;font-size: 18px;">@item.ChuDeTT</a>
+                            <span><em>Ngày đăng: @item.NgayTaoTT</em></span>
+                            <div><a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})">Xem chi tiết</a> | <a href="@Url.Action("HideInfo",new { idInfo=item.MaTT})">Ẩn</a> | <a href="@Url.Action("DelInfo",new { idInfo=item.MaTT})">Xóa</a></div>
+                        </div>
+                    }
+                }
+            </div>
+            <div id="infoHide">
+                <strong style="margin-left: 10px;">Các bài viết đã ẩn</strong>
+                @if (Session["hide"] == null)
+                {
+                    <em>Bạn chưa có bài viết nào!</em>
+                }
+                else
+                {
+                    foreach (var item in ((List<WebWiki.MyReference.ThongTin_NguoiDung>)Session["hide"]))
+                    {
+                        <div id="itemInfo">
+                            <a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})" style="color: black;font-size: 18px;">@item.ChuDeTT</a>
+                            <span><em>Ngày đăng: @item.NgayTaoTT</em></span>
+                            <div><a href="@Url.Action("InfoDetail",new { idInfo=item.MaTT})">Xem chi tiết</a> | <a href="@Url.Action("HideInfo",new { idInfo=item.MaTT})">Hiện</a> | <a href="@Url.Action("DelInfo",new { idInfo=item.MaTT})">Xóa</a></div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <div id="notifies">
+        <div id="gridNotifies">
+            <div id="infoDisplay">
+                <strong style="margin-left: 10px;">Các thông báo đã xem</strong>
+                @if (TempData["read"] != null)
+                {
+                    foreach (var item in ((List<WebWiki.MyReference.SuaTT_NguoiDung>)TempData["read"]))
+                    {
+                        <div id="itemInfo">
+                            <span><a href="@Url.Action("ViewPerson",new { idUser=item.MaNguoiDung,name=item.TenNguoiDung})">@item.TenNguoiDung</a> đã thêm ý kiến vào bài viết của bạn</span>
+                            <span><em>@item.NoidundSua</em></span>
+                            <span>@item.NgaySua</span>
+                            <a href="@Url.Action("InfoDetail", new { idInfo = item.MaTT })">Xem chi tiết</a>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <span>Chưa có thông báo nào!</span>
+                }
+            </div>
+            <div id="infoHide">
+                <strong style="margin-left: 10px;">Các thông báo mới</strong>
+                @if (TempData["new"] != null)
+                {
+                    foreach (var item in ((List<WebWiki.MyReference.SuaTT_NguoiDung>)TempData["new"]))
+                    {
+                        <div id="itemInfo">
+                            <span><a href="@Url.Action("ViewPerson",new { idUser=item.MaNguoiDung,name=item.TenNguoiDung})">@item.TenNguoiDung</a> đã thêm ý kiến vào bài viết của bạn</span>
+                            <span><em>@item.NoidundSua</em></span>
+                            <span>@item.NgaySua</span>
+                            <a href="@Url.Action("ReadCmt", new { idEI=item.MaSuaTT,idIF = item.MaTT })">Xem chi tiết</a>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <span>Chưa có thông báo nào mới!</span>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

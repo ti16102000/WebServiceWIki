@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "ListInfoUser";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="table-agile-info">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            User List
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped b-t b-light">
+                <thead>
+                    <tr>
+                        <th>Title Name</th>
+                        <th>Category</th>
+                        <td>Day Create</td>
+                        <td>Hide</td>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody style="word-break: break-all;">
+                    @foreach (var item in ((IEnumerable<WebWiki.MyReference.ThongTin_NguoiDung>)TempData["i"]))
+                    {
+                        <tr>
+                            <td>@item.ChuDeTT</td>
+                            <td>@item.TenDM</td>
+                            <td>@item.NgayTaoTT</td>
+                            <td>@(item.AnTT == true ? "Yes" : "No")</td>
+                            <td>
+                                <a href="@Url.Action("DetailInfoNormalUser",new { idIF=item.MaTT})" class="active" ui-toggle-class="">
+                                    <i class="fa fa-info-circle text-success text-active"></i>&nbsp; &nbsp;
+                                </a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
